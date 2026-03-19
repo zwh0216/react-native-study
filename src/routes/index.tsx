@@ -1,5 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { AntDesign } from '@react-native-vector-icons/ant-design';
 import { HomeScreen } from '../pages/home/index';
 import { ListScreen } from '../pages/list/index';
 import { MapScreen } from '../pages/map/index';
@@ -24,18 +25,27 @@ const TabPage = createBottomTabNavigator({
       screen: HomeScreen,
       options: {
         title: 'home page',
+        tabBarIcon: ({ focused, color, size }) => {
+          return <AntDesign name="home" color={color} size={size} />;
+        },
       },
     },
     List: {
       screen: ListScreen,
       options: {
         title: 'list page',
+        tabBarIcon: ({ color, size }) => {
+          return <AntDesign name="ordered-list" color={color} size={size} />;
+        },
       },
     },
     Map: {
       screen: MapScreen,
       options: {
-        title: 'map page',
+        title: 'scan page',
+        tabBarIcon: ({ color, size }) => {
+          return <AntDesign name="scan" color={color} size={size} />;
+        },
       },
     },
   },
